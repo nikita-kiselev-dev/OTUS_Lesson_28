@@ -10,6 +10,8 @@ namespace Sample
         [SerializeField] private float m_ExplosionRadius;
 
         [SerializeField] private float m_BangDelay;
+        
+        [SerializeField] private ParticleSystem m_BangEffect;
 
         public void Start()
         {
@@ -40,6 +42,7 @@ namespace Sample
                     Debug.Log($"{rigidbody.gameObject} was damaged by {gameObject}!");
                 }
             }
+            Instantiate(m_BangEffect, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         

@@ -17,7 +17,7 @@ namespace Sample
         public GameObject target;
         public float rotationSpeed = 25;
         public float rangeDistance = 5.0f;
-        [FormerlySerializedAs("m_Weapon1")] [FormerlySerializedAs("weapon")] public RifleWeapon m_RifleWeapon;
+        public WeaponsHandler WeaponsHandler;
         public float visionRadius;
     }
 }

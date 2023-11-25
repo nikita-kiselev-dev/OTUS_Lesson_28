@@ -6,6 +6,9 @@ namespace Sample
     {
         [SerializeField] private float m_ExplosionForce;
         [SerializeField] private float m_ExplosionRadius;
+
+        [SerializeField] private ParticleSystem m_BangEffect;
+        
         private void OnCollisionEnter(Collision other)
         {
             Collider[] colliders = Physics.OverlapSphere(this.gameObject.transform.position, m_ExplosionRadius);
@@ -19,6 +22,7 @@ namespace Sample
                     Debug.Log($"{rigidbody.gameObject} was damaged by {gameObject}!");
                 }
             }
+            Instantiate(m_BangEffect, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         

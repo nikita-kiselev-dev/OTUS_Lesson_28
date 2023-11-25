@@ -149,3 +149,4 @@ MonoBehaviour:
   m_ExplosionForce: 750
   m_ExplosionRadius: 2
   m_BangDelay: 2
+  m_BangEffect: {fileID: 2504214343621411456, guid: 3ed0d324122d7b24eaec75c55c74aafc, type: 3}

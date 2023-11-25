@@ -26,10 +26,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float fireAccurate = 0.5f;
     [SerializeField] private GameObject RifleStartBullet;
 
-    [SerializeField] private Weapon m_RifleWeapon;
-    [SerializeField] private Weapon m_Weapon;
+    [SerializeField] private WeaponsHandler m_WeaponsHandler;
+    [SerializeField] private WeaponList.Weapons m_CurrentWeaponChoose;
 
+    private Weapon m_CurrentWeapon;
     private Vector3 _aimPoint;
+
+    private void Start()
+    {
+        foreach (var weapon in m_WeaponsHandler.m_WeaponList)
+        {
+            if (weapon.Name == m_CurrentWeaponChoose)
+            {
+                m_CurrentWeapon = weapon;
+            }
+        }
+    }
     
     private void Update() 
     {
@@ -72,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
         if (_input.isFire)
         {
-            m_RifleWeapon.Shoot(_aimPoint);
+            m_CurrentWeapon.Shoot(_aimPoint);
         }
     }
 

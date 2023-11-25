@@ -11,7 +11,9 @@ namespace Sample
         private bool fireRequired;
         private Vector3 fireDirection;
         private float shootReloadTime;
-        
+
+        public override WeaponList.Weapons Name { get; set; } = WeaponList.Weapons.Mortar;
+
         public override void Shoot(Vector3 direction)
         {
             this.fireRequired = true;

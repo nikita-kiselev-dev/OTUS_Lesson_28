@@ -41,7 +41,7 @@ namespace Sample
             }
             else
             {
-                data.m_RifleWeapon.Shoot(distance.normalized);
+                data.WeaponsHandler.m_WeaponList[0].Shoot(distance.normalized);
                 data.agent.enabled = false;
             }
 
